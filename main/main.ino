@@ -2,8 +2,8 @@
 #include <PubSubClient.h>
 
 // WiFi
-const char *ssid = "SSID"; // Enter your WiFi name - phone hotssid. esp32 and laptop connected to the same hotssid. using WPA3 - personal
-const char *password = "password";  // Enter WiFi password
+const char *ssid = "ssid"; // Enter your WiFi name - phone hotssid. esp32 and laptop connected to the same hotssid. using WPA3 - personal
+const char *password = "wifi-pass";  // Enter WiFi password
 
 // MQTT Broker
 const char *mqtt_broker = "192.168.196.147"; // check terminal `ifconfig` on your laptop. this connect them through local network. 
@@ -46,7 +46,11 @@ void loop() {
     // update frequency
     if(frequency < frequencyLimit){
       frequency += 1;
-      client.publish(topic, String(frequency).c_str());
+      char payload[80];
+      strcpy(payload, "13520055 : ");
+      strcat(payload, String(frequency).c_str());
+      strcat(payload, " Hz");
+      client.publish(topic, payload);
     }
     Serial.println("13520055 : " + String(frequency) + " Hz");
     timeBetweenPulses = 1000 / frequency;
