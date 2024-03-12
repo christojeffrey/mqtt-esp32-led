@@ -48,7 +48,7 @@ void loop() {
       frequency += 1;
       client.publish(topic, String(frequency).c_str());
     }
-    Serial.println("Frequency: " + String(frequency) + " Hz");
+    Serial.println("13520055 : " + String(frequency) + " Hz");
     timeBetweenPulses = 1000 / frequency;
 
     // print the value to Serial Monitor
