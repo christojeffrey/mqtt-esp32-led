@@ -2,7 +2,7 @@
 #include <PubSubClient.h>
 
 // WiFi
-const char *ssid = "ssid"; // Enter your WiFi name - phone hotssid. esp32 and laptop connected to the same hotssid. using WPA3 - personal
+const char *ssid = "ssid"; // Enter your WiFi name - phone hotspot. esp32 and laptop connected to the same hotspot. using WPA3 - personal
 const char *password = "wifi-pass";  // Enter WiFi password
 
 // MQTT Broker
